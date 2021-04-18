@@ -9,7 +9,7 @@
 #include <Adafruit_SSD1306.h>
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 32 // OLED display height, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
 #define SHORT_MODE 0 // Short timer duration (25 minutes)
 #define LONG_MODE 1  // Long timer duration (50 minutes)
@@ -130,12 +130,12 @@ void setup() {
     Serial.begin(9600);
     pinMode(keyPin, INPUT_PULLUP);
 
-    if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
+    if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
       Serial.println(F("SSD1306 allocation failed"));
       for(;;);
     }
 
-    display.setTextSize(3);
+    display.setTextSize(4);
     display.setTextColor(WHITE);
 }
 
@@ -170,7 +170,7 @@ void loop() {
       updateDisplayString();
       
       display.clearDisplay();
-      display.setCursor(21, 6);
+      display.setCursor(5, 20);
   
       display.println(displayString);
       display.display();
