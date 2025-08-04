@@ -4,7 +4,7 @@
 
 - Arduino Uno
 - 128x64 I2C OLED Display (SSD1306 driver chip)
-- 110k resistor
+- 10k resistor
 - Push down button
 
 ## Schematic
